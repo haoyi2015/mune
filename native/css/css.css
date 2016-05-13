@@ -1,0 +1,82 @@
+/* 67bcf2;  主色调   列表背景e9eff3*/
+*{margin: 0; padding: 0}
+body{font-family: "微软雅黑";}
+header{
+	display: block;
+}
+.hadnav{
+	background: #fff;
+	color: #fff;
+	text-align: center;
+	font-size: 1.0rem;
+	height: 2.4rem;
+	width: 100%;
+	border-bottom: 1px solid #dddddd;
+}
+.hadnav .mui-title{
+	line-height: 2.4rem;
+	color: #2fba19;
+}
+/*tab 切换*/
+.news .mui-segmented-control .mui-control-item{
+	line-height: 46px;
+}
+/*高亮*/
+.news .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar{
+	background: #2fba19;
+	margin-top: 1px;
+}
+.news .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{
+	color: #2fba19;
+}
+.news .mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item{
+	border-top:0;
+}
+.news .mui-bar-tab .mui-tab-item.mui-active{
+	color: #2fba19;
+}
+.news .mui-slider-indicator.mui-segmented-control{
+	background: #fff;
+}
+.news .mui-slider .mui-slider-group{
+	margin-top: 18px;
+}
+.news .mui-navigate-right:after, .mui-push-right:after{
+	color: #656565;
+	font-size: 20px;
+}
+.news .mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item{
+	border-bottom: 0px;
+}
+.news .mui-bar-tab{
+	
+}
+
+.mui-control-item.mui-active{
+	color: #2fba19;
+}
+
+.hadnav .mui-bar-nav,
+.hadnav .mui-bar{
+	box-shadow: 0 0 0 #fff;
+	-webkit-box-shadow: 0 0 0 #fff;
+}
+.arrow-left{
+	background: url(../img/arraw-icon.png) no-repeat;
+	width: 0.95rem;
+	height: 1.25rem;
+	font-family: Muiicons;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1;
+    display: inline-block;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    float: left;
+    margin-top: 0.6rem;
+    margin-left: 0.6rem;
+}
+/*列表*/
+.cont-list-warp{
+	background:#e9eff3;
+}
