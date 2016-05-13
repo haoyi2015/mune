@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript" src="cordova.js" ></script>
+<script type="text/javascript">
+ 
+ window.onload =function(){  
+	 var vRData = window.MenuClient.APIFun(JSON.stringify({APIName:'GetIpAddr',Params:['']})); 
+	 vRData = JSON.parse(vRData);
+	 if(vRData.Code==0)
+	 {
+		 document.getElementById("inp_txt_ipAddr").value = vRData.Context.IpAddr;	 
+		 document.getElementById("inp_txt_ipPoint").value = vRData.Context.IpPoint;	
+	 }
+ }
+ 
+ function Update(){ 
+	 var vparams=JSON.stringify({APIName:'SetIpAddr',Params:[document.getElementById("inp_txt_ipAddr").value,document.getElementById("inp_txt_ipPoint").value]});
+	 //alert(window.MenuClient.APIFun);
+	 var vRData = window.MenuClient.APIFun(vparams);
+	 vRData = JSON.parse(vRData);
+	 if(vRData.Code==0 && vRData.Context)
+	{
+			alert('修改成功'); 
+	}else{
+		alert("1231");
+	}
+ }
+ 
+ window.MenuClient.Callback=function(data){
+	 if(data.Code==1)
+	 {
+		alert(data.Context);
+		return;
+	 }  
+	 
+	 alert(data.Context);
+ }
+ 
+ 
+ function GetMenu()
+ {
+	 window.MenuClient.APIFun(JSON.stringify({APIName:'GetMenus',Params:[]}));
+ }
+ 
+</script>
+<body>
+	IP地址：<input type="text" id="inp_txt_ipAddr"/>
+	端口：<input type="text" id="inp_txt_ipPoint" />
+	<input type="button" value="修改" onclick="javascript:Update();" />
+	<input type="button" value="获取菜单" onclick="javascript:GetMenu();" />
+</body>
+</html>

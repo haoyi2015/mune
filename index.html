@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="mune">
+	<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/mune.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/main.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/list.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body ng-controller="myListCtr">
+	<header>
+		读卡器菜单
+		<a id="aIp" ng-click="aipFun()">&nbsp;&nbsp;</a>
+	</header>
+	<!--提示-->
+	<div class="ns-effect-slidetop" style="display: none;">
+		<span class="icon icon-megaphone">！</span>
+		<p>连接成功<a href="#"></a> now.</p>
+	</div>
+	<!--分类弹出-->
+	<div class="t-box" style="display: none;">
+		<ul>
+			<li ng-click="uetMenusFun(uitmes.MID)" ng-repeat="uitmes in uetMenus">
+			<div class="meishi1"><font ng-bind="uitmes.MName"></font> <span class="xiaobiao">1225&gt;</span> 
+			</div>
+			</li>
+		</ul>
+	</div>
+	<section>
+		<ul class="wrp-box">
+			<li ng-repeat="items in ushopItems">
+				<div ng-click="opeMune(items.RID,items.MID)">
+					<span class="spleft"><img class="img-box" src="{{uimg}}{{items.MImg}}" /></span>
+					<i>
+						<font ng-bind="items.MName"></font>
+						<b ng-bind="items.RID">A120304</b>
+					</i>
+				</div>
+			</li>
+		</ul>
+	</section>
+	<!--设置IP-->
+	<div class="ipbox">
+		<label>IP号:<input type="text" id="IP"></label>
+		<label>端口:<input type="text" id="Dkou"></label>
+		<p>
+			<span ng-click="canalAipFun()">取消</span>
+			<span ng-click="saveIp()">确定</span>
+		</p>
+	</div>
+	<div class="wzhao"></div>
+</body>
+</html>
